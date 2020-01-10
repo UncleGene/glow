@@ -9664,7 +9664,7 @@ static void quantizeSimpleTest(glow::PlaceholderBindings &bindings_,
   EE_.compile(CompilationMode::Infer);
 
   EE_.run(bindings_);
-  EXPECT_EQ(F_->getNodes().size(), 1);
+  EXPECT_EQ(F_->getNodes().size(), 3);
 
   auto RH = result->getHandle();
   EXPECT_NEAR(RH.at({0, 0}), 21.0, 0.001);
